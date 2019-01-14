@@ -1,0 +1,34 @@
+title: Documentation Starter Kit
+email: mailto:ybannykh@adobe.com
+description: Start your new documentation project by forking this repository
+logo: Doc Starter
+baseurl:
+url:
+githuburl: https://github.com/magento-devdocs/doc-starter/
+theme: devdocs
+permalink: pretty
+exclude: ['bin', 'node_modules', 'vendor', '.git', '.idea','Gemfile*','README.md','*.json','CODEOWNERS','package.json','vagrant.sh','s3_website.yml']
+
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+kramdown:
+  syntax_highlighter_opts:
+    css_class: 'highlighter'
+
+algolia:
+  application_id: 'E642SEDTHL'
+  index_name: 'your_index'
+  api_key: 'public_api_key'
+  files_to_exclude:
+    - search.md
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      lang: "en"
+      layout: "default"
+
+plugins:
+  - jekyll-redirect-from
