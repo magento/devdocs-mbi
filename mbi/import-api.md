@@ -7,10 +7,6 @@ functional_areas:
   - Setup
 ---
 
-There are four ways to get your data into Magento BI: connect a database, connect a SaaS integration, upload a CSV file, or use our API.
-
-This section describes how to use the API.
-
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
 
 This API accepts and returns valid JSON for all its methods. Each method uses a standard HTTP verb (GET/POST/PUT) and uses standard HTTP response codes for returning statuses.
