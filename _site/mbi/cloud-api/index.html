@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento BI Cloud Onboarding API | Documentation Starter Kit</title>
+	<meta name="description" content="Start your new documentation project by forking this repository">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	
+	<!-- Algolia search setup, do not remove this:  -->
+<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "your_index",
+    key:  "public_api_key"
+  };
+</script>
+
+<!-- put all your js or css files here: -->
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main"></button>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/">
+      <img src="/assets/i/m-logo.svg" alt="">
+      <img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">Doc Starter</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+
+      <ul class="nav-main" role="menubar">
+    
+      <li class="menuitem"><a href="/section/">Section</a></li>
+    
+      <li class="menuitem"><a href="/another-section/">Another Section</a></li>
+    
+</ul>
+
+    </div>
+
+    <div class="search-btn">
+      <button class="search-trigger search-icon" aria-label="Search"></button>
+    </div>
+
+    <form class="quick-search" action="/search/" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <button class="quick-search-close" aria-label="Close search">&times;</button>
+    </form>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+
+<h4 class="guide-title"></h4>
+
+<ul>
+  <li >
+    <a href=""></a>
+  </li>
+  
+    
+    
+
+    
+      
+
+
+
+
+<li class="active">
+  <a href="/mbi/cloud-api/">Magento BI Cloud Onboarding API</a>
+  
+</li>
+
+
+    
+
+  
+    
+    
+
+    
+      
+
+
+
+
+<li >
+  <a href="/mbi/getting-started/">Magento BI Getting Started</a>
+  
+</li>
+
+
+    
+
+  
+    
+    
+
+    
+      
+
+
+
+
+<li >
+  <a href="/mbi/import-api/">Magento BI Import API</a>
+  
+</li>
+
+
+    
+
+  
+    
+    
+
+    
+      
+
+
+
+
+<li >
+  <a href="/mbi/libraries/">Magento BI Libraries</a>
+  
+</li>
+
+
+    
+
+  
+</ul>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	<h1 class="page-heading">Magento BI Cloud Onboarding API</h1>
+</section>
+
+			<p>NOTE: These endpoints are in BETA.</p>
+
+<p>The Cloud Onboarding API allows users with specific permissions to create a new client, include an admin user and templated dashboard. This can be achieved by calling a series of endpoints as described below.</p>
+
+<h2 id="create-access-token">Step 1. Create access token</h2>
+
+<p>An access token represents a time-limited session for a specific user. The request includes a field for a <code class="highlighter-rouge">clientSecret</code>. The <code class="highlighter-rouge">clientSecret</code> must be provided to you by Magento BI. Credentials for an existing user must also be supplied in the request.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/tokens <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'
+  {
+   "password": "abc123",
+   "scope":"default",
+   "username":"you@here.com",
+   "grant_type":"password",
+   "clientId":1,
+   "clientSecret": "XXXXXXX"
+  }'</span>
+</code></pre></div></div>
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+  "refreshed_at": "2018-06-22 10:53:16",
+  "oauth_client_id": 1,
+  "token_type": "bearer",
+  "id": 16,
+  "access_token": "131c4...",
+  "scope": "default",
+  "user_id": 1,
+  "create_at": "2018-06-22 10:53:16",
+  "client_id": null,
+  "expires_at": "2018-06-22 14:53:16",
+  "grant_type": "password",
+  "expires_in": 14400,
+  "refresh_token": null
+}
+</code></pre></div></div>
+
+<h2 id="create-new-client">Step 2. Create a new client</h2>
+
+<p>This request creates a new client. The response returns a JOB_ID which can be used to poll for the status of the client creation process.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v3/signups <span class="se">\</span>
+ <span class="nt">-X</span> POST <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'
+  {
+   "tier": "T100",
+   "company": "Coco Co.",
+   "first_name": "CSMFirst",
+   "last_name": "CSMLast",
+   "email": "blackhole+admin@rjmetrics.com",
+   "role": "csm",
+   "magento": {
+    "customer_id": "MAG0000001",
+    "subscription_id": "1000"
+   }
+ }'</span>
+</code></pre></div></div>
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+ "url": "http:\/\/api.rjmetrics.com\/v3\/signups\/1827c806-...",
+ "id": "1827c806-..."
+}
+</code></pre></div></div>
+
+<h2 id="poll-signups-status">Step 3. Poll signups status</h2>
+
+<p>Use the <code class="highlighter-rouge">url</code> from the previous step to check the status of the client creation process. Do not proceed to the following step until the status returns as complete.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v3/signups/[JOB_ID] <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> {
+ "pubkey": "ssh-rsa AAAAB3N...",
+ "status": "completed"
+ "client_id": 123
+}
+</code></pre></div></div>
+
+<h2 id="create-user">Step 4. Create user</h2>
+
+<p>This request creates a new user on the newly created client. Be sure to use the client_id returned by the previous step.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v3/invites <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;&lt;access_token&gt;&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'
+  {
+   "force_create": 1,
+   "email": "customer@customer.com",
+   "client_id": 2,
+   "client_rights": {
+    "admin": 1,
+    "billing": 1,
+    "readonly": 1,
+    "technical": 0
+   },
+   "first_name": "tester",
+   "last_name": "mctest"
+}'</span>
+</code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+ "inviter_user_id": 39203,
+ "client_id": 2,
+ "email": "customer@customer.com",
+ "id": 3892
+}
+</code></pre></div></div>
+
+<h2 id="update-client-properties">Step 5. Update client properties</h2>
+
+<p>This request sets many properities on the client.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/clients/2 <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Cookie: DASHSESS2=&lt;&lt;access_token&gt;&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'
+  {
+   "name": "ughasoiuhdf",
+   "properties": {
+     "blackout_hours": "",
+     "default_currency": "USD",
+     "forced_update_hours": "",
+     "has_guest_checkout": "0",
+     "has_privacy_protection": null,
+     "hosted_warehouse": null,
+     "is_implemented": false,
+     "magento_store_db_name": "magento_store",
+     "magento_store_table_prefix": "",
+     "magento_version": "1",
+     "perform_updates": "1",
+     "phone_number": null,
+     "stale_email_summary_action": "1",
+     "timezone": "America/New_York",
+     "website_url": null,
+     "week_start_day": "7"
+   }
+ }'</span>
+</code></pre></div></div>
+
+<h2 id="create-connection">Step 6. Create connection</h2>
+
+<p>This request adds a new database connection to the client. The request should contain connection information, including credentials, for the clients’ Magento store MySQL database.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/v2/clients/2/connections/input-connections <span class="se">\</span>
+ <span class="nt">-X</span> POST <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s2">"Cookie: DASHSESS2=&lt;&lt;access_token&gt;&gt;"</span> <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'
+  {
+   "credentials": {
+   "encryption_password": null,
+   "password": "PASSWORD"
+   },
+   "display_name": "new conn",
+   "name": "new conn",
+   "properties": {
+    "dbName": "magento_store",
+    "desiredTZ": null,
+    "encryption_gatewayAddress": null,
+    "encryption_groupName": null,
+    "encryption_groupSecret": null,
+    "encryption_sshHostAddress": null,
+    "encryption_sshPort": null,
+    "encryption_sshUsername": null,
+    "encryption_type": "none",
+    "encryption_username": null,
+    "host": "my-magento-db.com",
+    "noPhpPasswordEncryption": "1",
+    "port": "3306",
+    "sourceTZ": "UTC",
+    "status": "1",
+    "useSSL": "false",
+    "username": "magento"
+   },
+  "type": "mysql"
+ }'</span>
+</code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> {
+"meta_id": 5,
+"id": 14,
+"namespace": "input-connections",
+"client_id": 2,
+"type": "mysql",
+"name": "new conn",
+"properties": {
+  "sourceTZ": "UTC",
+  "dbName": "magento_store",
+  "encryption_groupName": null,
+  "encryption_type": "none",
+  "useSSL": "false",
+  "desiredTZ": null,
+  "status": "1",
+  "encryption_groupSecret": null,
+  "host": "pinterest.cp83nhvyi9x1.us-east-1.rds.amazonaws.com",
+  "noPhpPasswordEncryption": "1",
+  "port": "3306",
+  "encryption_sshUsername": null,
+  "username": "magento",
+  "encryption_sshHostAddress": null,
+  "encryption_username": null,
+  "encryption_gatewayAddress": null,
+  "encryption_sshPort": null
+  },
+"display_name": "new conn"
+}
+</code></pre></div></div>
+
+<h2 id="poll-connection">Step 7. Poll connection</h2>
+
+<p>Make requests to poll the connection creation status until it returns a completed status.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/v2/clients/2/connections/input-connections?include_deleted<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Cookie: DASHSESS2=&lt;&lt;access_token&gt;&gt;'</span>
+</code></pre></div></div>
+
+<p><em>Example Response</em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[
+   {
+    "namespace": "input-connections",
+    "created_at": "2018-04-10 10:03:09.0",
+    "display_name": null,
+    "id": 5,
+    "type": "mysql",
+    "name": "vandelay",
+    "integration_type": {
+     "protocol": "mysql",
+     "directions": ["inbound"],
+     "cbi_is_available": true,
+     "pricing_tier": "standard",
+     "replication_type": "db",
+     "pipeline_state": "released",
+     "display_name": "MySQL",
+     "type": "mysql"
+    },
+   "meta_id": 1,
+   "client_id": 2,
+   "updated_at": "2018-04-10 10:03:21.0",
+   "properties": {
+   "blackout": null,
+   "sourceTZ": null,
+   "encryption_type": "none",
+   "useSSL": "false",
+   "desiredTZ": null,
+   "sslCa": null,
+   "sslCert": null,
+   "status": "1",
+   "host": "vandelay.cp83nhvyi9x1.us-east-1.rds.amazonaws.com",
+   "noPhpPasswordEncryption": "1",
+   "port": "3306",
+   "created": "2018-04-10 10:03:09",
+   "username": "boxcutter",
+   "frequency": null,
+   "established": "2018-04-10 10:03:20",
+   "sslKey": null
+  }
+ }
+]
+</code></pre></div></div>
+
+<h2 id="test-connection">Step 8. Test connection</h2>
+
+<p>This request will kickoff a job that tests whether the connection can be made successfully. Use the connection id returned by the previous step in the url.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://dashboard.rjmetrics.com/v2/client/2/job <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Cookie: dashuid=1; DASHSESS2=&lt;&lt;access_token&gt;&gt;'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Accept: application/json, text/plain, */*'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Referer: http://dashboard.rjmetrics.com/v2/client/2/dashapp/settings/connection/&lt;&lt;connection_id&gt;&gt;/'</span> <span class="se">\</span>
+ <span class="nt">--data</span> <span class="s1">'jobType=27&amp;workload[connectionId]=&lt;&lt;connection_id&gt;&gt;&amp;workload[syncAndSample]=1'</span>
+</code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> {
+ "status": {
+ "name": "Queued",
+ "id": 1
+},
+"end": null,
+"start": null,
+"type": {
+ "name": "Connection Test",
+ "id": 27
+},
+"id": null
+}
+</code></pre></div></div>
+
+<h2 id="poll-connection-test-status">Step 9. Poll connection test status</h2>
+
+<p>Make requests to poll for the status of the connection test. Do not proceed to the next step until the response indicates a completed status.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="s1">'http://dashboard.rjmetrics.com/v2/client/&lt;&lt;client_id&gt;&gt;/job/type/5'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Accept: application/json, text/plain, */*'</span> <span class="se">\</span>
+ <span class="nt">-H</span> <span class="s1">'Cookie: dashuid=1; DASHSESS2=&lt;&lt;access_token&gt;&gt;'</span>
+</code></pre></div></div>
+
+<h2 id="create-templated-dashboards">Step 10. Create templated dashboards</h2>
+
+<p>This request creates dashboards from a template for a given connection. Use the connection id provided by the response of the previous step. This reponse will contain an <code class="highlighter-rouge">id</code> that can be used to poll for the job’s status.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/clients/<span class="o">&lt;&lt;</span><span class="no">client_id</span><span class="sh">&gt;&gt;/autodash \
+ -X POST \
+ -H 'Content-Type: application/json' \
+ -H "Cookie: DASHSESS2=&lt;&lt;access_token&gt;&gt;" \
+ -d '
+  {
+   "connections": {
+   "db": {
+    "connection_id": &lt;&lt;connection_id&gt;&gt;,
+    "database": "magento_store",
+    "table_prefix": ""
+   }
+ },
+ "package": "magento1_rjql1",
+ "user_id": &lt;&lt;user_id&gt;&gt;
+}'
+</span></code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{"id":"d4740d5e-4c4e-45c4-b73b-6ca9c20fdc44"}
+</code></pre></div></div>
+
+<h2 id="poll-dashboard-creation-status">Step 11. Poll dashboard creation status</h2>
+
+<p>Make requests to poll for the status of the dashboard creation job. Once the response indicates a completed status, the client is fully onboarded.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http://api.rjmetrics.com/v1/clients/<span class="o">&lt;&lt;</span><span class="no">client_id</span><span class="sh">&gt;&gt;/autodash/&lt;&lt;id&gt;&gt; \
+ -H 'Content-Type: application/json' \
+ -H "Cookie: DASHSESS2=&lt;&lt;access_token&gt;&gt;" \
+</span></code></pre></div></div>
+
+<p><em>Example Response</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> {
+ "status": "completed",
+ "job_id": "d4740d5e-4c4e-45c4-b73b-6ca9c20fdc44"
+}
+</code></pre></div></div>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <!-- This is a footer navigation for the site. If you dont plan to add more links here, you can remove this file -->
+<ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2019 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
+</body>
+</html>
+
