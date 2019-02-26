@@ -373,14 +373,14 @@ Putting it all together, we incorporate the `syncUser` function into our origina
 This example is included with the <a href="{{ page.baseurl }}/mbi/libraries.html">client libraries</a> or can be [downloaded from github](http://www.github.com/rjmetrics).
 
 **Javascript**
-```js
+```text
 
     npm install
     node users-table.js
 ```
 
 **PHP**
-```php
+```text
 
     composer install
     php users-table.php
