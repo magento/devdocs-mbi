@@ -12,7 +12,7 @@ Before you begin, you should checkout the <a href="{{ page.baseurl }}/mbi/librar
 
 ## Create a Users Table {#create-users-table}
 
-Your most important table in RJMetrics is your Users table. In your app, you probably have a `user` object with some data like `id`, `email`, and `acquisition_source`.
+Your most important table in Magento BI is your `Users` table. In your app, you probably have a `user` object with some data like `id`, `email`, and `acquisition_source`.
 
 Let's walk through how you would push this data to the Import API.
 
@@ -476,7 +476,7 @@ We'll need a new function to push the order object:
       return client.push_data("orders", [order])[0]
 ```
 
-Now, we can plug this into the same template from the users table:
+Now, we can plug this into the same template from the `users` table:
 
 **Javascript**
 ```js
