@@ -397,14 +397,14 @@ This example is included with the <a href="{{ page.baseurl }}/mbi/libraries.html
 ```
 
 **Ruby**
-```ruby
+```text
 
     bundle install
     ruby users-table.rb
 ```
 
 **Python**
-```python
+```text
 
     pip install
     python examples/users_table.py
