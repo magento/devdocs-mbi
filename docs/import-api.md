@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-The RJMetrics Data Import API allows you to push arbitrary data into your RJMetrics data warehouse. We built it using REST principles for simplicity.
+The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
 
 This API accepts and returns valid JSON for all its methods. Each method uses a standard HTTP verb (GET/POST/PUT) and uses standard HTTP response codes for returning statuses.
 
