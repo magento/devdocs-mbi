@@ -15,7 +15,7 @@ This API accepts and returns valid JSON for all its methods. Each method uses a 
 
 Authentication with the Data Import API is done with a single API key and your RJMetrics client id. You can create an API key by logging into RJMetrics and selecting *Data* > *Connections* and clicking *Add a Data Source*. Select the *Data Import API* data source.
 
-![](../mbi/images/apikey.png)
+![](../docs/images/apikey.png)
 
 You can authenticate to the API by providing your API key as a GET parameter on your request.
 
