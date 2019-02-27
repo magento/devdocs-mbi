@@ -7,8 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Before you begin, you should checkout the <a href="{{ page.baseurl }}/mbi/libraries.html">libraries</a> section to install your chosen client library. Here are some quick examples that can get you started with the Import API.
-
+Before you begin, you should checkout the [libraries](../docs/libraries.html) section to install your chosen client library. Here are some quick examples that can get you started with the Import API.
 
 ## Create a Users Table {#create-users-table}
 
@@ -370,7 +369,7 @@ Putting it all together, we incorporate the `syncUser` function into our origina
             print "Failed to sync user with id ", user["id"]
 ```
 
-This example is included with the <a href="{{ page.baseurl }}/mbi/libraries.html">client libraries</a> or can be [downloaded from github](http://www.github.com/rjmetrics).
+This example is included with the [client libraries](../docs/libraries.html) or can be [downloaded from github](http://www.github.com/rjmetrics).
 
 **Javascript**
 ```text
