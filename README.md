@@ -8,5 +8,5 @@ To build this repo locally:
 1. Initialize the MBI docs repo using rake.
 
    ```shell
-   rake multirepo:add dir=mbi repo=git@github.com:magento-devdocs/devdocs-mbi.git branch=master
+   rake multirepo:add dir=mbi repo=git@github.com:magento/devdocs-mbi.git branch=master
    ```
