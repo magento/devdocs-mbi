@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-To make integrating with the Import API as easy as possible, we've created some client libraries for you to use. Have your own library? Want to contribute to ours? [Reach out to us!](https://support.magento.com/hc/en-us)
+To make integrating with the Import API as easy as possible, we've created some client libraries for you to use. Have your own library? Want to contribute to ours? [Reach out to us!](https://support.magento.com/hc/en-us).
 
 ## Clojure {#clojure}
 
