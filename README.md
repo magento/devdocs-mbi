@@ -5,8 +5,8 @@ This repo contains the source files for the Magento Business Intelligence (MBI) 
 To build this repo locally:
 
 1. Clone the [magento/devdocs](https://github.com/magento/devdocs) repo.
-1. Initialize the MBI docs repo using rake.
+1. Initialize the MBI docs repo using rake:
 
    ```shell
-   rake multirepo:add dir=mbi repo=git@github.com:magento/devdocs-mbi.git branch=master
+   rake init
    ```
