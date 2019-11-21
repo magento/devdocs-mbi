@@ -80,7 +80,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
       # this is where we'll push data
 ```
 
-Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data. Check out the NEW LINK TO API REF WILL GO HERE: `upsert documentation <api-upsert>` to learn about the specifics on data that can be pushed to the API.
+Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data.
 
 **Javascript**
 ```js
