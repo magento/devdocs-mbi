@@ -17,7 +17,7 @@ Let's walk through how you would push this data to the Import API.
 
 First, let's lay out a template for pushing the data. We'll make sure the client is `authenticated <api-authentication>` and prepare to push the data to the Import API.
 
-**Javascript**
+**Javascript:**
 ```js
 
     var rjmetrics = require("rjmetrics");
@@ -31,7 +31,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
     });
 ```
 
-**PHP**
+**PHP:**
 ```php
 
     require 'vendor/autoload.php';
@@ -43,7 +43,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
     }
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     (ns examples.acquisition-source
@@ -57,7 +57,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
           )))
 ```
 
-**Ruby**
+**Ruby:**
 ```ruby
 
     require "rjmetrics_client"
@@ -69,7 +69,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
     end
 ```
 
-**Python**
+**Python:**
  ```python
 
     import rjmetrics.client
@@ -82,7 +82,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
 
 Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data.
 
-**Javascript**
+**Javascript:**
 ```js
 
     function syncUser(client, user) {
@@ -100,7 +100,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
     }
 ```
 
-**PHP**
+**PHP:**
 ```php
 
     function syncUser($client, $user) {
@@ -117,7 +117,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
     }
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     (defn- sync-user
@@ -133,7 +133,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
             (print "Failed to sync user with id" (:id user) "\n"))))
 ```
 
-**Ruby**
+**Ruby:**
 ```ruby
 
     def sync_user(client, user)
@@ -145,7 +145,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
     end
 ```
 
-**Python**
+**Python:**
 ```python
 
     def sync_user(client, user):
@@ -158,7 +158,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
 
 Putting it all together, we incorporate the `syncUser` function into our original script.
 
-**Javascript**
+**Javascript:**
 ```js
 
     var rjmetrics = require("rjmetrics");
@@ -204,7 +204,7 @@ Putting it all together, we incorporate the `syncUser` function into our origina
     });
 ```
 
-**PHP**
+**PHP:**
 ```php
 
     require 'vendor/autoload.php';
@@ -259,7 +259,7 @@ Putting it all together, we incorporate the `syncUser` function into our origina
     }
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     (ns examples.acquisition-source
@@ -292,7 +292,7 @@ Putting it all together, we incorporate the `syncUser` function into our origina
           (dorun (map (partial sync-user config) users)))))
 ```
 
-**Ruby**
+**Ruby:**
 ```ruby
 
     require "rjmetrics_client"
@@ -330,7 +330,7 @@ Putting it all together, we incorporate the `syncUser` function into our origina
     end
 ```
 
-**Python**
+**Python:**
 ```python
 
     import rjmetrics.client
@@ -371,21 +371,21 @@ Putting it all together, we incorporate the `syncUser` function into our origina
 
 This example is included with the [client libraries](../docs/libraries.html) or can be [downloaded from github](http://www.github.com/rjmetrics).
 
-**Javascript**
+**Javascript:**
 ```text
 
     npm install
     node users-table.js
 ```
 
-**PHP**
+**PHP:**
 ```text
 
     composer install
     php users-table.php
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     lein repl
@@ -395,14 +395,14 @@ This example is included with the [client libraries](../docs/libraries.html) or 
     > (run)
 ```
 
-**Ruby**
+**Ruby:**
 ```text
 
     bundle install
     ruby users-table.rb
 ```
 
-**Python**
+**Python:**
 ```text
 
     pip install
@@ -414,7 +414,7 @@ Now, let's create an orders table with the following fields: `id`, `user_id`, `v
 
 We'll need a new function to push the order object:
 
-**Javascript**
+**Javascript:**
 ```js
 
     function syncOrder(client, order) {
@@ -430,7 +430,7 @@ We'll need a new function to push the order object:
     }
 ```
 
-**PHP**
+**PHP:**
 ```php
 
     function syncOrder($client, $order) {
@@ -445,7 +445,7 @@ We'll need a new function to push the order object:
     }
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     (defn- sync-order
@@ -458,7 +458,7 @@ We'll need a new function to push the order object:
             (print "Failed to sync order with id" (:id order) "\n"))))
 ```
 
-**Ruby**
+**Ruby:**
 ```ruby
 
     def sync_order(client, order)
@@ -467,7 +467,7 @@ We'll need a new function to push the order object:
     end
 ```
 
-**Python**
+**Python:**
 ```python
 
     def sync_order(client, order):
@@ -477,7 +477,7 @@ We'll need a new function to push the order object:
 
 Now, we can plug this into the same template from the `users` table:
 
-**Javascript**
+**Javascript:**
 ```js
 
     var rjmetrics = require("rjmetrics");
@@ -518,7 +518,7 @@ Now, we can plug this into the same template from the `users` table:
     });
 ```
 
-**PHP**
+**PHP:**
 ```php
 
     require 'vendor/autoload.php';
@@ -568,7 +568,7 @@ Now, we can plug this into the same template from the `users` table:
     }
 ```
 
-**Clojure**
+**Clojure:**
 ```clojure
 
     (ns examples.orders-table
@@ -595,7 +595,7 @@ Now, we can plug this into the same template from the `users` table:
           (dorun (map (partial sync-order config) users)))))
 ```
 
-**Ruby**
+**Ruby:**
 ```ruby
 
     require "rjmetrics_client"
@@ -627,7 +627,7 @@ Now, we can plug this into the same template from the `users` table:
     end
 ```
 
-**Python**
+**Python:**
 ```python
 
     import rjmetrics.client
@@ -660,4 +660,4 @@ Now, we can plug this into the same template from the `users` table:
             print "Synced order with id ", order["id"]
         else:
             print "Failed to sync order with id ", order["id"]
-```            
+```
