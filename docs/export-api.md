@@ -12,17 +12,17 @@ The Magento BI API allows customers to access some of the raw data behind their
 
 ## Authentication
 
-API connections are authenticated via a token that must be passed in the HTTP header of every request.
+API connections are authenticated using a token that must be passed in the HTTP header of every request.
 
-* Keys can be generated via **Export Data -> Export API**, and must be passed in the `X-RJM-API-Key` portion of every request header.
+* Generate a key from **Export Data -> Export API**. You must specify this key in the `X-RJM-API-Key` header of every request.
 
-* All keys must be associated with a single client and a set of IP addresses that the requests will be made from. IP addresses can be specified either as a specific address, or as a range of addresses in [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). For example, the CIDR notation to allow ALL IP addresses would be: `0.0.0.0/0`.
+* All keys must be associated with a single client and a set of IP addresses that are allowed to make requests. IP addresses can be specified either as a specific address, or as a range of addresses in [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). For example, the CIDR notation to allow ALL IP addresses would be: `0.0.0.0/0`.
 
 ![mbi-valid-ip-address.png](../docs/images/mbi-valid-ip-address.png)
 
 ## Methods
 
-Methods that retrieve data must be accessed with a GET request, and those that create, modify, or delete data with a POST request.
+Use a GET request to retrieve data or a POST request to create, modify, or delete data.
 
 Methods are defined by an HTTP Verb (GET, POST, PUT, DELETE), a URL and a set of arguments. The response HTTP status code will be 200-Success for all successful requests unless otherwise specified.
 
