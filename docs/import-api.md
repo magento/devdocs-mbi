@@ -24,11 +24,8 @@ curl -v https://connect.rjmetrics.com/
 curl -v https://connect.rjmetrics.com/v2/client/:cid/authenticate?apikey=:apikey
 ```
 
-{%
-include note.html
-type='warning'
-content='This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.'
-%}
+{:.bs-callout-warning}
+This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.
 
 ## Return Codes {#return-codes}
 
@@ -50,6 +47,7 @@ The current version of the Import API is v2.
 v1 is still available, but will be deprecated in the future.
 
 ## Test Environment {#test-environment}
+
 The Data Import API has a full test (sandbox) environment.
 
 The sandbox environment uses the same keys and return codes as the production API, but does not persist incoming data. You can use this environment to test your integration.
@@ -76,11 +74,8 @@ The upsert method allows you to push data into your RJMetrics data warehouse. Yo
 * Each data point must contain a `keys` field. The `keys` field should specify which fields in the records represent the primary key(s).
 * An array of data must contain no more than 100 individual data points.
 
-{%
-include note.html
-type='info'
-content='Each data point in your data warehouse will be uniquely indexed by the fields specified in `keys`. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.'
-%}
+{:.bs-callout-warning}
+Each data point in your data warehouse will be uniquely indexed by the fields specified in `keys`. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.
 
 Tables in the Data Import API are schemaless. There is no command to create or destroy a table - you can push data to any table name and it will be dynamically generated.
 

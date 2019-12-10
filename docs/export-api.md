@@ -37,7 +37,7 @@ You need a [raw data export](https://docs.magento.com/mbi/tutorials/export-raw-d
 **Response**
 Returns a JSON-encoded list of raw exports available.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export
 ```
 
@@ -45,12 +45,13 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export
 `GET /export/_id_ \[no arguments\]`
 
 **Response**
-Returns:
+Returns
+
 * a zip-compressed CSV file containing the raw data of a completed export
 * a 404-Not Found for an export that doesn’t exist or is not complete
 * a 410-Gone for an expired export
 
-```json
+```bash
 curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51
 ```
 
@@ -60,7 +61,7 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51
 **Response**
 Returns a JSON-encoded description of the export with this id, or a 404 if this export doesn’t exist.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/info
 ```
 
@@ -70,7 +71,7 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/inf
 **Response**
 Creates a new export with the exact same parameters as the specified export. If name parameter is specified, the new export will be assigned its value. **Note that modification of start and end time parameters is no longer supported.** Returns 201-Created along with a JSON-encoded description of the newly created export, including its ID which you can use to check status and download.
 
-```json
+```bash
 curl -d "name=New Copied Export" -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/copy
 ```
 
@@ -82,7 +83,7 @@ curl -d "name=New Copied Export" -H "X-RJM-API-Key: _your\_key_" https://api.rjm
 **Response**
 Returns a JSON-encoded list of tables in the data warehouse of the client corresponding to \[_client\_id_\].
 
-```json
+```bash
 curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table
 ```
 
@@ -92,7 +93,7 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/tab
 **Response**
 Returns a JSON-encoded list of table columns in the table corresponding to \[_table\_id_\].
 
-```json
+```bash
 curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table/3
 ```
 
@@ -102,7 +103,7 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/tab
 **Response**
 Creates a new raw data export of the entire contents of the table corresponding to table\_id. Note that exports are capped at 10 million rows, so don't try this on very large tables. Returns a JSON-encoded message with a reference to the newly created export.
 
-```json
+```bash
 curl -d "" -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table/3/export
 ```
 
@@ -114,7 +115,7 @@ curl -d "" -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/
 **Response**
 Returns a JSON-encoded list of figures that are available for export.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure
 ```
 
@@ -128,7 +129,7 @@ Outputs the data used to create the figure with the specified id. Figure IDs can
 
 The user can specify an output format of either .csv or .json.
 
-```json
+```bash
 curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure/360531/export
 ```
 
@@ -138,7 +139,7 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 **Response**
 Returns a JSON-encoded description of the figure with the specified _id,_ or a 404 if the figure does not exist. Figure IDs can be found in the "Export Figure" dialogue in the Magento BI dashboard interface.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure/360531/info
 ```
 
@@ -150,7 +151,7 @@ curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure/360531/i
 **Response**
 Returns a JSON-encoded list of charts that are available for export.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/chart
 ```
 
@@ -164,7 +165,7 @@ Outputs the data used to create the chart with the specified id. Chart IDs can b
 
 The user can specify an output format of either .csv or .json.
 
-```json
+```bash
 curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/chart/2038112/export
 ```
 
@@ -174,6 +175,6 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 **Response**
 Returns a JSON-encoded description of the chart with the specified _id,_ or a 404 if the chart does not exist. Chart IDs can be found in the "Export Chart" dialogue in the Magento BI dashboard interface.
 
-```json
+```bash
 curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/chart/2038112/info
 ```
