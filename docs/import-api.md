@@ -9,29 +9,13 @@ functional_areas:
 
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
 
-This API accepts and returns valid JSON for all its methods. Each method uses a standard HTTP verb (GET/POST/PUT) and uses standard HTTP response codes for returning statuses.
+Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md##authentication) your connection.
 
-### Authentication {#authentication}
-
-Authentication with the Data Import API is done with a single API key and your RJMetrics client id. You can create an API key by logging into RJMetrics and selecting **Data** > **Connections** and clicking **Add a Data Source**. Select the **Data Import API** data source.
-
-![](../docs/images/apikey.png)
-
-You can authenticate to the API by providing your API key as a GET parameter on your request.
-
-```bash
-curl -v https://connect.rjmetrics.com/
-curl -v https://connect.rjmetrics.com/v2/client/:cid/authenticate?apikey=:apikey
-```
-
-{:.bs-callout-warning}
-This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.
-
-### Return Codes {#return-codes}
+## Return Codes {#return-codes}
 
 The Data Import API uses standard HTTP return codes to indicate the status of a request. Your app should handle each of the following return statuses gracefully.
 
-Generally speaking, codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error on our end. If errors in the 5xx range persist, please contact RJMetrics support.
+Generally speaking, codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error on our end. If errors in the 5xx range persist, please contact [support](https://support.magento.com/hc/en-us/articles/360019088251).
 
 * 200 OK - request was successful.
 * 201 Created - new data was added as a result of the request.
@@ -40,13 +24,13 @@ Generally speaking, codes in the 2xx range indicate a successful transaction, co
 * 404 Not Found - The resource you are looking for does not exist.
 * 500 Server Error - Something went wrong on RJMetrics' end.
 
-### Versioning {#versioning}
+## Versioning {#versioning}
 
 The current version of the Import API is v2.
 
 v1 is still available, but will be deprecated in the future.
 
-### Test Environment {#test-environment}
+## Test Environment {#test-environment}
 
 The Data Import API has a full test (sandbox) environment.
 
@@ -88,53 +72,67 @@ Here are some guidelines for managing tables:
 
 Here's an example of an Upsert call:
 
-```json
+```bash
 curl -X POST -d @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey=:apikey --header "Content-type: application/json"
+```
 
-:cid - your client id
-:table - table name
-:apikey - your API key
+The above call contains the following variables:
+
+`@filename` - name of the file you are uploading
+`:cid` - your client Id
+`:table` - table name
+`:apikey` - your API key
+
+**Response:**
+
+```json
 "status": "complete",
-"created_at": "2012-08-05 04:51:02"
+"created_at": "2019-08-05 04:51:02"
 client.push_data(
     "table_name",
     test_data
 )
-Example 1: Single data point
+```
 
+### Upsert single data point example
+
+```json
 {
   "keys": ["id"],
   "id": 1,
   "email": "joe@schmo.com",
   "status": "pending",
-  "created_at": "2012-08-01 14:22:32"
+  "created_at": "2019-08-01 14:22:32"
 }
-Example 2: Array of data points
+```
 
+### Upsert array of data points example
+
+```json
 [{
   "keys": ["id"],
   "id": 1,
   "email": "joe@schmo.com",
   "status": "pending",
-  "created_at": "2012-08-01 14:22:32"
+  "created_at": "2019-08-01 14:22:32"
 },{
   "keys": ["id"],
   "id": 2,
   "email": "anne@schmo.com",
   "status": "pending",
-  "created_at": "2012-08-03 23:12:30"
+  "created_at": "2019-08-03 23:12:30"
 },{
   "keys": ["id"],
   "id": 1,
   "email": "joe@schmo.com",
   "status": "complete",
-  "created_at": "2012-08-05 04:51:02"
+  "created_at": "2019-08-05 04:51:02"
 }]
 ```
 
 ## Additional Examples
 
-The following section describes how you can call the API through various libraries to perform the following tasks:
+The following section describes how you can call the import API through various libraries to perform the following tasks:
 
 * Create a Users Table
 * Create an Orders Table
