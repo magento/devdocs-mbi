@@ -9,7 +9,7 @@ functional_areas:
 
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
 
-Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md#authentication) your connection.
+Before using the import API, make sure you [authenticate](../docs/getting-started.md#authentication) your connection.
 
 ## Return Codes {#return-codes}
 
