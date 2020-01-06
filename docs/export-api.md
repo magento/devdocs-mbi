@@ -8,9 +8,9 @@ functional_areas:
   - Setup
 ---
 ​
-The Magento BI Export API allows you to  to access some of the raw data behind your Magento BI dashboard.
+The Magento BI Export API allows you to access some of the raw data behind your Magento BI dashboard.
 
-Before using the import API, make sure you [authenticate](../docs/getting-started.md#authentication) your connection.
+Before using the export API, make sure you [authenticate](../docs/getting-started.md#authentication) your connection.
 
 ## Raw data exports
 
