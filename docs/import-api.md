@@ -9,20 +9,20 @@ functional_areas:
 
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
 
-Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md##authentication) your connection.
+Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md#authentication) your connection.
 
 ## Return Codes {#return-codes}
 
-The Data Import API uses standard HTTP return codes to indicate the status of a request. Your app should handle each of the following return statuses gracefully.
+The Data Import API uses standard HTTP return codes to indicate the status of a request. Your application should handle each of the following return statuses.
 
-Generally speaking, codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error on our end. If errors in the 5xx range persist, please contact [support](https://support.magento.com/hc/en-us/articles/360019088251).
+Codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error with Magento BI. If errors in the 5xx range persist, please contact [support](https://support.magento.com/hc/en-us/articles/360019088251).
 
 * 200 OK - request was successful.
 * 201 Created - new data was added as a result of the request.
 * 400 Bad request - Your request was missing a required parameter.
 * 401 Unauthorized - Authorization failed. Double check your API key.
 * 404 Not Found - The resource you are looking for does not exist.
-* 500 Server Error - Something went wrong on RJMetrics' end.
+* 500 Server Error - There is an error in Magento BI.
 
 ## Versioning {#versioning}
 
@@ -44,7 +44,7 @@ curl -v https://sandbox-connect.rjmetrics.com/v2/client/:cid/:endpoint?apikey=:a
 
 ### Status {#status}
 
-You can always check the status of the Data Import API. This is called when you instantiate the client. This will return a 200 OK response if the API is operational.
+You can always check the status of the Data Import API. This is called when you instantiate the client. This will return a `200-Success` response if the API is operational.
 
 ```bash
 curl -v https://connect.rjmetrics.com
@@ -141,9 +141,9 @@ The following section describes how you can call the import API through various 
 
 Your most important table in Magento BI is your `Users` table. In your application, you probably have a `user` object with some data like `id`, `email`, and `acquisition_source`.
 
-Let's walk through how you would push this data to the Import API.
+This examples describes how to push this data to the Import API.
 
-First, let's lay out a template for pushing the data. We'll make sure the client is `authenticated <api-authentication>` and prepare to push the data to the Import API.
+First, define a template to push the data. Ensure the client is `authenticated <api-authentication>` and prepare to push the data to the Import API.
 
 **Javascript:**
 
@@ -213,7 +213,7 @@ First, let's lay out a template for pushing the data. We'll make sure the client
       # this is where we'll push data
 ```
 
-Next, we want to actually push the data. Let's create a new function to sync the new data.
+Next, create a new function to sync the new data.
 
 **Javascript:**
 
@@ -294,7 +294,7 @@ Next, we want to actually push the data. Let's create a new function to sync the
       return client.push_data("users", [user]) # NOTE: the python library only pushes lists
 ```
 
-Putting it all together, we incorporate the `syncUser` function into our original script.
+Finally, incorporate the `syncUser` function into the original script.
 
 **Javascript:**
 
@@ -559,9 +559,9 @@ This example is included with the [client libraries](../docs/libraries.html) or 
 
 ### Create an Orders Table {#create-an-orders-table}
 
-Now, let's create an orders table with the following fields: `id`, `user_id`, `value` and `sku`.
+Now, create an orders table with the following fields: `id`, `user_id`, `value` and `sku`.
 
-We'll need a new function to push the order object:
+Create a new function to push the order object:
 
 **Javascript:**
 
@@ -629,7 +629,7 @@ We'll need a new function to push the order object:
       return client.push_data("orders", [order])[0]
 ```
 
-Now, we can plug this into the same template from the `users` table:
+Now, plug this into the same template from the `users` table:
 
 **Javascript:**
 

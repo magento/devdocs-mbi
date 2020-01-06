@@ -10,7 +10,7 @@ functional_areas:
 ​
 The Magento BI Export API allows you to  to access some of the raw data behind your Magento BI dashboard.
 
-Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md##authentication) your connection.
+Before using the import API, make sure you [authenticate](../docs/mbi/getting-started.md#authentication) your connection.
 
 ## Raw data exports
 ​
@@ -28,7 +28,7 @@ The `GET /export` call returns a list of raw exports available.
 **Request:**
 ​
 ```bash
-curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export
+curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export
 ```
 ​
 ​
@@ -43,7 +43,7 @@ The `GET /export/:id`call returns a zip-compressed CSV file containing the raw d
 **Request:**
 ​
 ```bash
-curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51
+curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export/51
 ```
 ​
 ### Get a export description
@@ -57,7 +57,7 @@ The `GET /export/:id/info` call returns a description of the export with the spe
 **Request:**
 ​
 ```bash
-curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/info
+curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export/51/info
 ```
 ​
 ### Copy an export
@@ -65,7 +65,7 @@ curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/inf
 Creates a new export with the exact same parameters as the specified export. If you specify the `name` parameter, the new export will be assigned its value.
 ​
 {:.bs-callout-info}
-Modifying the start and end time parameters is no longer supported.
+The API no longer supports modifying the start and end time parameters.
 ​
 **Endpoint:**
 ​
@@ -74,7 +74,7 @@ Modifying the start and end time parameters is no longer supported.
 **Request:**
 ​
 ```bash
-curl -d "name=New Copied Export" -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/export/51/copy
+curl -d "name=New Copied Export" -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export/51/copy
 ```
 ​
 ## Data tables
@@ -90,7 +90,7 @@ The `GET /client/:clientId/table` call returns a list of tables in the data ware
 **Request:**
 ​
 ```bash
-curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table
+curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/client/12/table
 ```
 ​
 ### Get a list of table columns
@@ -104,7 +104,7 @@ The `GET /client/:clientId/table/:tableId` call returns a list of table columns 
 **Request:**
 ​
 ```bash
-curl -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table/3
+curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/client/12/table/3
 ```
 ​
 ### Create a raw data export of a table
@@ -121,7 +121,7 @@ Exports are capped at 10 million rows. Do not try this on very large tables.
 **Request:**
 ​
 ```bash
-curl -d "" -H "X-RJM-API-Key: _your\_key_" https://api.rjmetrics.com/0.1/client/12/table/3/export
+curl -d "" -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/client/12/table/3/export
 ```
 ​
 ## Figures
@@ -134,7 +134,7 @@ The `GET /figure` call returns a list of figures that are available for export.
 ​
 `GET /figure`
 ​
-**Request:** 
+**Request:**
 ​
 ```bash
 curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure

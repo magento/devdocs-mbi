@@ -27,15 +27,22 @@ To create an import API key:
 1. Click **Add an Integration**.
 1. Select the **Data Import API** data source.
 
-With the API key, you can now authenticate to the API by providing your API key as a GET parameter on your request.
+With the API key you can now authenticate, but first check the status of the Data Import API by calling:
 
 ```bash
-curl -v https://connect.rjmetrics.com/
+curl -v https://connect.rjmetrics.com
+```
+
+This will return a `200-Success` response if the API is operational.
+
+Next, authenticate to the API by passing in your client ID and API key:
+
+```bash
 curl -v https://connect.rjmetrics.com/v2/client/:cid/authenticate?apikey=:apikey
 ```
 
 {:.bs-callout-warning}
-This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.
+This key has write access to your Magento BI data warehouse. Do not distribute this key to untrusted third parties.
 
 ### Generating authentication token for the export API
 
@@ -44,7 +51,7 @@ This key has write access to your RJMetrics data warehouse. Do not distribute th
 1. Log into Magento BI and select **Manage Data** > **Export Data** > **Export API**.
 1. Click **Create a new Export API Key**.
 
-You must specify this key in the `X-RJM-API-Key` header of every request.
+You must specify this key in the `X-RJM-API-Key` header of every export request.
 ​
 All keys must be associated with a single client and a set of IP addresses that are allowed to make requests. IP addresses can be specified either as a specific address, or as a range of addresses in [CIDR notation](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). For example, the CIDR notation to allow ALL IP addresses would be: `0.0.0.0/0`.
 ​
