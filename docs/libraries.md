@@ -58,7 +58,6 @@ client = rjmetrics.Client(client_id, api_key);
 
 For more information, check out the [source code on Github](https://github.com/RJMetrics/RJMetrics-js).
 
-
 ## PHP {#php}
 
 The RJMetrics PHP client library can be installed using [Composer](https://getcomposer.org).
@@ -89,7 +88,6 @@ $client = new RJMetrics\Client($myClientId, $myApiKey);
 
 For more information, you can see the [documentation for Httpful](http://phphttpclient.com/) or [view the source on Github](https://github.com/RJMetrics/RJMetrics-php).
 
-
 ## Python {#python}
 
 You can install the RJMetrics Python client library with `pip` or `easy_install`.
@@ -114,7 +112,6 @@ client = Client(client_id, api_key)
 ```
 
 For more information, check out the [source code on Github](https://github.com/RJMetrics/RJMetrics-py).
-
 
 ## Ruby {#ruby}
 

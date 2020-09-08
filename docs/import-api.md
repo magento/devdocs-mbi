@@ -17,12 +17,12 @@ The Data Import API uses standard HTTP return codes to indicate the status of a 
 
 Codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error with Magento BI. If errors in the 5xx range persist, please contact [support](https://support.magento.com/hc/en-us/articles/360019088251).
 
-* 200 OK - request was successful.
-* 201 Created - new data was added as a result of the request.
-* 400 Bad request - Your request was missing a required parameter.
-* 401 Unauthorized - Authorization failed. Double check your API key.
-* 404 Not Found - The resource you are looking for does not exist.
-* 500 Server Error - There is an error in Magento BI.
+*  200 OK - request was successful.
+*  201 Created - new data was added as a result of the request.
+*  400 Bad request - Your request was missing a required parameter.
+*  401 Unauthorized - Authorization failed. Double check your API key.
+*  404 Not Found - The resource you are looking for does not exist.
+*  500 Server Error - There is an error in Magento BI.
 
 ## Versioning {#versioning}
 
@@ -54,9 +54,9 @@ curl -v https://connect.rjmetrics.com
 
 The upsert method allows you to push data into your RJMetrics data warehouse. You can push entire arrays of data or single data points. This endpoint will only accept data that have the following properties:
 
-* The data must be valid JSON.
-* Each data point must contain a `keys` field. The `keys` field should specify which fields in the records represent the primary key(s).
-* An array of data must contain no more than 100 individual data points.
+*  The data must be valid JSON.
+*  Each data point must contain a `keys` field. The `keys` field should specify which fields in the records represent the primary key(s).
+*  An array of data must contain no more than 100 individual data points.
 
 {:.bs-callout-warning}
 Each data point in your data warehouse will be uniquely indexed by the fields specified in `keys`. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.
@@ -65,10 +65,10 @@ Tables in the Data Import API are schemaless. There is no command to create or d
 
 Here are some guidelines for managing tables:
 
-* Create one table for each type of data point you are pushing.
-* Generally speaking, each data point pushed into a table should have the same schema.
-* Typically, one type of ‘thing’ will correspond to one table. For example, a typical eCommerce company might have a ‘customer’, ‘order’, ‘order_item’, and ‘product’ table.
-* Table names must be alphanumeric (plus underscores). Bad table names will result in a `400 Bad Request` return code.
+*  Create one table for each type of data point you are pushing.
+*  Generally speaking, each data point pushed into a table should have the same schema.
+*  Typically, one type of ‘thing’ will correspond to one table. For example, a typical eCommerce company might have a ‘customer’, ‘order’, ‘order_item’, and ‘product’ table.
+*  Table names must be alphanumeric (plus underscores). Bad table names will result in a `400 Bad Request` return code.
 
 Here's an example of an Upsert call:
 
@@ -134,8 +134,8 @@ client.push_data(
 
 The following section describes how you can call the import API through various libraries to perform the following tasks:
 
-* Create a Users Table
-* Create an Orders Table
+*  Create a Users Table
+*  Create an Orders Table
 
 ### Create a Users Table {#create-users-table}
 
