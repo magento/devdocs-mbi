@@ -24,7 +24,7 @@ Authentication with the Data Import API is done with a single API key and your R
 To create an import API key:
 
 1. Log into Magento BI and select **Manage Data** > **Integrations**.
-1. Click **Add an Integration**.
+1. Click __Add an Integration__.
 1. Select the **Data Import API** data source.
 
 With the API key you can now authenticate, but first check the status of the Data Import API by calling:
