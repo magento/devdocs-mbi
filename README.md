@@ -1,6 +1,6 @@
 # MBI developer documentation
 
-Welcome! This repo contains the source files for the Magento Business Intelligence (MBI) developer documentation. These files are available under the OSL-3.0 license.
+Welcome! This repository contains the source files for the Magento Business Intelligence (MBI) developer documentation. These files are available under the OSL-3.0 license.
 
 ## Contributors
 
