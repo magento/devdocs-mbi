@@ -141,11 +141,11 @@ curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/figure
 
 ### Export figure data
 
-The `POST /figure/:id/export/format=<FormatType>` call outputs the data used to create the figure with the specified ID. Figure IDs can be found in the "Export Figure" dialogue in the Magento BI dashboard interface.
+The `POST /figure/:id/export/format=<FormatType>` call outputs the data used to create the figure with the specified ID. Figure IDs can be found in the "Export Figure" dialog in the Magento BI dashboard interface.
 
 ![](../docs/images/figure-id.png)
 
-The user can specify an output format of either `.csv` or `.json`.
+If a figure was created using the [Visual Report Builder](https://docs.magento.com/mbi/data-user/reports/ess-rpt-build-visual.html), you can specify an output format of either `.csv` or `.json`. If a figure was created using the [SQL Report Builder](https://docs.magento.com/mbi/data-analyst/dev-reports/sql-rpt-bldr.html), you can specify an output format of `.csv` only.
 ​
 **Endpoint:**
 ​
@@ -159,7 +159,7 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 
 ### Get a figure description
 
-The `POST /figure/:id/info` call returns a description of the specified figure. Figure IDs can be found in the "Export Figure" dialogue in the Magento BI dashboard interface.
+The `POST /figure/:id/info` call returns a description of the specified figure. Figure IDs can be found in the "Export Figure" dialog in the Magento BI dashboard interface.
 ​
 **Endpoint:**
 ​
@@ -191,7 +191,7 @@ curl -H "X-RJM-API-Key: your\_key" https://api.rjmetrics.com/0.1/chart
 
 ### Export chart data
 
-The `POST /chart/:id/export/format=<FormatType>\]` call outputs the data used to create the specified chart. Chart IDs can be found in the "Export Chart" dialogue in the Magento BI dashboard interface.
+The `POST /chart/:id/export/format=<FormatType>\]` call outputs the data used to create the specified chart. Chart IDs can be found in the "Export Chart" dialog in the Magento BI dashboard interface.
 
 ![](../docs/images/chart-id.png)
 
@@ -209,7 +209,7 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 
 ### Get a chart description
 
-The `POST /chart/:id/info` call returns a description of the specified chart or a 404 if the chart does not exist. Chart IDs can be found in the "Export Chart" dialogue in the Magento BI dashboard interface.
+The `POST /chart/:id/info` call returns a description of the specified chart or a 404 if the chart does not exist. Chart IDs can be found in the "Export Chart" dialog in the Magento BI dashboard interface.
 ​
 **Endpoint:**
 ​
