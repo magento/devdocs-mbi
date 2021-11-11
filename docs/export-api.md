@@ -20,7 +20,7 @@ You need a [raw data export](https://docs.magento.com/mbi/tutorials/export-raw-d
 ### List all available raw exports
 
 The `GET /export` call returns a list of raw exports available.
-​
+
 **Endpoint:**
 ​
 `GET /export`
@@ -34,7 +34,7 @@ curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export
 ### Get a specific export
 
 The `GET /export/:id`call returns a zip-compressed CSV file containing the raw data of a completed export.
-​
+
 **Endpoint:**
 ​
 `GET /export/:id`
@@ -48,7 +48,7 @@ curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/export/51
 ### Get an export description
 
 The `GET /export/:id/info` call returns a description of the export with the specified ID.
-​
+
 **Endpoint:**
 ​
 `GET /export/:id/info`
@@ -65,7 +65,7 @@ Creates a new export with the exact same parameters as the specified export. If 
 ​
 {:.bs-callout-info}
 The API no longer supports modifying the start and end time parameters.
-​
+
 **Endpoint:**
 ​
 `POST /export/:id/copy/name=<ExportName>`
@@ -81,7 +81,7 @@ curl -d "name=New Copied Export" -H "X-RJM-API-Key: <your_key>" https://api.rjme
 ### Get a list of tables
 
 The `GET /client/:clientId/table` call returns a list of tables in the data warehouse of the client corresponding to _clientId_.
-​
+
 **Endpoint:**
 ​
 `GET /client/:clientId/table`
@@ -95,7 +95,7 @@ curl -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/client/12/tabl
 ### Get a list of table columns
 
 The `GET /client/:clientId/table/:tableId` call returns a list of table columns in the table corresponding to _tableIid_.
-​
+
 **Endpoint:**
 ​
 `GET /client/:clientId/table/:tableId`
@@ -112,7 +112,7 @@ The `POST /client/:clientId/table/:tableId/export` call creates a new raw data e
 ​
 {:.bs-callout-info}
 Exports are capped at 10 million rows. Do not try this on very large tables.
-​
+
 **Endpoint:**
 ​
 `POST /client/:clientId/table/:tableId/export`
@@ -128,7 +128,7 @@ curl -d "" -H "X-RJM-API-Key: <your_key>" https://api.rjmetrics.com/0.1/client/1
 ### Get a list of figures
 
 The `GET /figure` call returns a list of figures that are available for export.
-​
+
 **Endpoint:**
 ​
 `GET /figure`
@@ -146,7 +146,7 @@ The `POST /figure/:id/export/format=<FormatType>` call outputs the data used to 
 ![](../docs/images/figure-id.png)
 
 If a figure was created using the [Visual Report Builder](https://docs.magento.com/mbi/data-user/reports/ess-rpt-build-visual.html), you can specify an output format of either `.csv` or `.json`. If a figure was created using the [SQL Report Builder](https://docs.magento.com/mbi/data-analyst/dev-reports/sql-rpt-bldr.html), you can specify an output format of `.csv` only.
-​
+
 **Endpoint:**
 ​
 `POST /figure/:id/export/format=<FormatType>`
@@ -160,7 +160,7 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 ### Get a figure description
 
 The `POST /figure/:id/info` call returns a description of the specified figure. Figure IDs can be found in the "Export Figure" dialog in the Magento BI dashboard interface.
-​
+
 **Endpoint:**
 ​
 `POST /figure/:id/info`
@@ -178,7 +178,7 @@ Export Specific Reports (created by cohort report builder)
 ### Get a list of charts
 
 The `GET /chart` call returns a list of charts that are available for export.
-​
+
 **Endpoint:**
 ​
 `GET /chart`
@@ -196,7 +196,7 @@ The `POST /chart/:id/export/format=<FormatType>\]` call outputs the data used to
 ![](../docs/images/chart-id.png)
 
 The user can specify an output format of either `.csv` or `.json`.
-​
+
 **Endpoint:**
 ​
 `POST /chart/:id/export/format=<FormatType>\]`
@@ -210,7 +210,7 @@ curl -d "format=csv&includeColumnHeaders=1" -H "X-RJM-API-Key: your\_key" https:
 ### Get a chart description
 
 The `POST /chart/:id/info` call returns a description of the specified chart or a 404 if the chart does not exist. Chart IDs can be found in the "Export Chart" dialog in the Magento BI dashboard interface.
-​
+
 **Endpoint:**
 ​
 `POST /chart/:id/info`
