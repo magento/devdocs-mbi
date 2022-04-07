@@ -29,8 +29,8 @@ If you find a typo or errors in terms, you can either fix it with a pull request
 
 You have a couple of options to enter an issue:
 
-- Have general feedback or a term to suggest? Create an issue in the [magento/devdocs-mbi](https://github.com/magento/devdocs/issues/new/choose) repo.
-- Have feedback on a specific topic? Click the **Give us feedback** link at the top right of the page to report on the currently open topic.
+-  Have general feedback or a term to suggest? Create an issue in the [magento/devdocs-mbi](https://github.com/magento/devdocs/issues/new/choose) repo.
+-  Have feedback on a specific topic? Click the **Give us feedback** link at the top right of the page to report on the currently open topic.
 
      ![Report an issue](https://devdocs.magento.com/common/images/contribute-feedback-link.png)
 
@@ -38,8 +38,8 @@ You have a couple of options to enter an issue:
 
 Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
 
-- [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](http://tinyurl.com/engcom-slack))
-- [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
-- [E-mail](mailto:DL-Magento-Doc-Feedback@magento.com)
+-  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](http://tinyurl.com/engcom-slack))
+-  [Twitter @AdobeCommrcDocs](https://twitter.com/AdobeCommrcDocs)
+-  [E-mail](mailto:DL-Magento-Doc-Feedback@magento.com)
 
 Thank you for contributing your brilliance to Magento DevDocs!!
