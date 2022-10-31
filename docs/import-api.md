@@ -5,6 +5,8 @@ functional_areas:
   - Import API
   - System
   - Setup
+migrated_to: https://developer-stage.adobe.com/commerce/services/reporting/import-api/
+layout: migrated
 ---
 
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.
@@ -67,7 +69,7 @@ Here are some guidelines for managing tables:
 
 *  Create one table for each type of data point you are pushing.
 *  Generally speaking, each data point pushed into a table should have the same schema.
-*  Typically, one type of ‘thing’ will correspond to one table. For example, a typical eCommerce company might have a ‘customer’, ‘order’, ‘order_item’, and ‘product’ table.
+*  Typically, one type of 'thing' will correspond to one table. For example, a typical eCommerce company might have a 'customer', 'order', 'order_item', and 'product' table.
 *  Table names must be alphanumeric (plus underscores). Bad table names will result in a `400 Bad Request` return code.
 
 Here's an example of an Upsert call:

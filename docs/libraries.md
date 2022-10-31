@@ -5,6 +5,8 @@ functional_areas:
   - Libraries
   - System
   - Setup
+migrated_to: https://developer-stage.adobe.com/commerce/services/reporting/libraries/
+layout: migrated
 ---
 
 To make integrating with the Import API as easy as possible, we've created some client libraries for you to use. Have your own library? Want to contribute to ours? [Reach out to us!](https://support.magento.com/hc/en-us)
