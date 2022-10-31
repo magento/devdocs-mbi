@@ -5,7 +5,7 @@ functional_areas:
   - Import API
   - System
   - Setup
-migrated_to: https://developer-stage.adobe.com/commerce/services/reporting/import-api/
+migrated_to: https://developer.adobe.com/commerce/services/reporting/import-api/
 layout: migrated
 ---
 

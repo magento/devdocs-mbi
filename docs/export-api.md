@@ -6,7 +6,7 @@ functional_areas:
   - Export API
   - System
   - Setup
-migrated_to: https://developer-stage.adobe.com/commerce/services/reporting/export-api/
+migrated_to: https://developer.adobe.com/commerce/services/reporting/export-api/
 layout: migrated
 ---
 ​
