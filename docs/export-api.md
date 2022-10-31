@@ -6,6 +6,8 @@ functional_areas:
   - Export API
   - System
   - Setup
+migrated_to: https://developer-stage.adobe.com/commerce/services/reporting/export-api/
+layout: migrated
 ---
 ​
 The Magento BI Export API allows you to access some of the raw data behind your Magento BI dashboard.
