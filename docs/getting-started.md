@@ -5,7 +5,7 @@ functional_areas:
   - Getting started
   - System
   - Setup
-migrated_to: https://developer.adobe.com/commerce/services/reporting/
+redirect_to: https://developer.adobe.com/commerce/services/reporting/
 layout: migrated
 ---
 
