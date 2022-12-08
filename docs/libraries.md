@@ -5,7 +5,7 @@ functional_areas:
   - Libraries
   - System
   - Setup
-migrated_to: https://developer.adobe.com/commerce/services/reporting/libraries/
+redirect_to: https://developer.adobe.com/commerce/services/reporting/libraries/
 layout: migrated
 ---
 
