@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/services/reporting/import-api/
-layout: migrated
+status: migrated
 ---
 
 The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.

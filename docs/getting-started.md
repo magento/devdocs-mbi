@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_to: https://developer.adobe.com/commerce/services/reporting/
-layout: migrated
+status: migrated
 ---
 
 You can use the Magento BI API to [import](../docs/import-api.html) data into your Magento data warehouse and [export](../docs/export-api.html) raw data from your Magento BI dashboards.
