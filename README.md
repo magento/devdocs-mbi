@@ -2,11 +2,17 @@
 
 Welcome! This repository contains the source files for the Magento Business Intelligence (MBI) developer documentation. These files are available under the OSL-3.0 license.
 
-## Contributors
-
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
-
-Check out our [Contribution Guide](https://github.com/magento/devdocs-mbi/blob/master/.github/CONTRIBUTING.md) and start contributing today!
+> **Important update**
+>
+> Adobe Commerce and Magento Open Source 2.4.x documentation has been migrated to Adobe sites. See our new landing pages to access the most current information.
+>
+>[Adobe Commerce Developer Documentation](https://developer.adobe.com/commerce/docs/) (Adobe Developer site)—Develop, customize, integrate, extend, and use advanced capabilities
+>
+>[Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League)—Plan, implement, operate, upgrade, and maintain your Commerce projects
+>
+> Some content was consolidated or moved to different guides. If you have trouble finding a topic, see the [Migrated topics](https://commerce-docs.github.io/devdocs-archive/migrated-topics.html).
+>
+> We welcome contributions to migrated content! You can find similar links to GitHub on the Adobe sites.
 
 ## Build MBI docs
 
@@ -27,3 +33,7 @@ To build this repo locally:
    ```shell
    rake preview
    ```
+
+## Archived docs
+
+To view the archived documentation, see <https://commerce-docs.github.io/devdocs-archive/>.
